@@ -48,7 +48,11 @@ impl PromQLResult {
     pub fn is_scalar(&self) -> bool {
         self.status == "success"
             && self.data.is_some()
-            && self.data.as_ref().filter(|d| d.resultType == "scalar").is_some()
+            && self
+                .data
+                .as_ref()
+                .filter(|d| d.resultType == "scalar")
+                .is_some()
     }
 }
 

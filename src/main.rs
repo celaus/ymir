@@ -2,7 +2,6 @@ mod comms;
 mod config;
 mod sink;
 mod source;
-mod utils;
 use anyhow::Result;
 use config::Config;
 

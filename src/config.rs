@@ -1,4 +1,4 @@
-use std::{time::Duration};
+use std::time::Duration;
 
 use envconfig::Envconfig;
 
@@ -29,7 +29,6 @@ impl Config {
 #[cfg(test)]
 mod tests {
     #![allow(non_snake_case)]
-    
 
     // #[async_std::test]
     // async fn test_Config_parse_credentials_is_base64() {

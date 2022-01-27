@@ -3,11 +3,8 @@ use std::sync::Arc;
 use crate::comms::QueryResult;
 use dyn_fmt::AsStrFormatExt;
 use itertools::Itertools;
-use log::{error};
-use surf::{
-    http::convert::{Serialize},
-    Url,
-};
+use log::error;
+use surf::{http::convert::Serialize, Url};
 use xactor::*;
 
 #[derive(Serialize, Debug, Clone)]
