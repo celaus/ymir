@@ -1,0 +1,20 @@
+[package]
+edition = "2021"
+name = "ymir"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "*"
+async-std = {version = "*", features = ["unstable", "attributes"]}
+async-trait = "0.1"
+dyn-fmt = "0.3"
+env_logger = "*"
+envconfig = "*"
+itertools = "0.10"
+log = "0.4"
+serde = {version = "1.0", features = ["derive"]}
+serde_json = "*"
+surf = {version = "*", features = ["h1-client-rustls"], default-features = false}
+xactor = "0.7"
