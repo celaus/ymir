@@ -17,14 +17,14 @@ struct NeoSegmentParams {
 pub struct NeosegmentSink {
     url: Url,
     format: String,
-    colors_fn: Arc<Box<dyn Fn(f64) -> u8 + 'static + Sync + Send>>,
+    colors_fn: Arc<Box<dyn Fn(f64) -> u32 + 'static + Sync + Send>>,
 }
 
 impl NeosegmentSink {
     pub fn new<I, U>(
         url: U,
         format: I,
-        colors_fn: Box<dyn Fn(f64) -> u8 + 'static + Sync + Send>,
+        colors_fn: Box<dyn Fn(f64) -> u32 + 'static + Sync + Send>,
     ) -> Self
     where
         I: Into<String>,

@@ -21,7 +21,15 @@ async fn main() -> Result<()> {
     let _neoseg = NeosegmentSink::new(
         Url::parse(&config.neosegment_endpoint)?,
         &config.neosegment_format,
-        Box::new(|_c| 243),
+        Box::new(|c| {
+            let (r, g, b) = match c.round() as i64 {
+                0..=10 => (0, 255, 0),
+                11..=20 => (255, 255, 0),
+                21..=30 => (255, 155, 0),
+                _ => (255, 0, 0),
+            };
+            (r << 16) | (g << 8) | b
+        }),
     )
     .start()
     .await?;
