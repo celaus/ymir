@@ -24,7 +24,7 @@ async fn main() -> Result<()> {
         Box::new(|c| {
             // 0xwwggrrbb
             let w = 0;
-            let wind = c.round() as i32;
+            let wind = c.round() as i32 * 5;
             let g = 0.max(255 - wind) as u32;
             let r = 255.min(wind) as u32;
             let b = 0 as u32;
@@ -35,7 +35,7 @@ async fn main() -> Result<()> {
             //     21..=30 => (155, 255, 0),
             //     _ => (0, 255, 0),
             // };
-            (w << 24) | (r << 16) | (g << 8) | b
+            (w << 24) | (g << 16) | (r << 8) | b
         }),
     )
     .start()
