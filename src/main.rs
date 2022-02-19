@@ -23,7 +23,7 @@ async fn main() -> Result<()> {
         &config.neosegment_format,
         Box::new(|c| {
             let s = 255.0 / 50.0; // max
-            let g = 255_f64.min(0_f64.max(2.0 * 255.0 - (s * c))) as u32;
+            let g = 255_f64.min(0_f64.max(2.0 * (255.0 - s * c))) as u32;
             let r = 255_f64.min(2.0 * s * c) as u32;
             // 0xwwggrrbb
             let w = 0;
